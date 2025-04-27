@@ -46,7 +46,8 @@ floating_modifier $mod
 tiling_drag modifier titlebar
 
 # start a terminal
-bindsym $mod+Return exec kitty
+bindsym $mod+Return exec ghostty
+bindsym $mod+Shift+Return exec kitty
 
 # kill focused window
 bindsym $mod+q kill
@@ -144,9 +145,9 @@ bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcu
 
 
 mode "nixbook" {
-        bindsym p exec 'kitty /etc/nixbook/powerwash-i3.sh'
-        bindsym u exec 'kitty /etc/nixbook/update.sh'
-        bindsym s exec 'kitty /etc/nixbook/update_shutdown.sh'
+        bindsym p exec 'xterm -bg black /etc/nixbook/powerwash-i3.sh'
+        bindsym u exec 'xterm -bg black /etc/nixbook/update.sh'
+        bindsym s exec 'xterm -bg black /etc/nixbook/update_shutdown.sh'
         # back to normal: Enter or Escape or $mod+r
         bindsym Return mode "default"
         bindsym Escape mode "default"

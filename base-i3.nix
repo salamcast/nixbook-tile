@@ -146,6 +146,7 @@ in
 	  zip
 	  jq
 	  unzip
+    ghostty
     kitty
     docker
     docker-compose
