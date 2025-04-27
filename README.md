@@ -2,44 +2,57 @@
 
 **Convert your old computer (even chromebook) to a user friendly, lightweight, durable, and auto updating operating system build on top of NixOS.**
 
-The goal is to create a "chromebook like" unbreakable computer to give to basic users who know nothing about Linux and won't need to ever worry about updates / upgrades.
+The goal is to create a "chromebook like" unbreakable computer for a basic dev enviroment
 
 ---
 Full video walk through of converting from Windows to Nixbook is now live here:
 
 <https://youtu.be/izvVjfqd5j8?si=ZJAdBZRsQO38YIy5>
+
+my project is froked from this one
 ---
 
-The default **nixbook** version:
-- ***32 gigs of storage and 4 gigs of ram recommended***
-- configured cinnamon desktop and firefox base
-- Chrome, Zoom, and Libreoffice installed by default flathub enabled out of the box.
+My **nixbook** version with a tiling window manager:
+- *** my Base System is a ThinkPad E440 with i3 2.4 GHz and 8GB ram ***
+- configured i3 desktop and brave browser base
+- Zoom, and Libreoffice installed by default flathub enabled out of the box.
 - Automatic weekly OS updates with 4 weeks of roll backs
 - Daily flatpak updates
+- vscode and some estensions
+- docker
+- oracle cli
+- ghostty
+- zsh
 
+*** work in progress ***
 
-The **nixbook lite** version:
-- ***16 gigs of storage and 2 gigs of ram recommended***
-- configured cinnamon desktop and firefox base
-- Automatic weekly updates with 2 weeks of roll backs
-  
+will work to fix any issues with 
+---
 
-![Screenshot from 2024-10-22 10-31-24](https://github.com/user-attachments/assets/53fc76ad-5861-46d8-895a-b4be1e1b2816)
+- the i3 configuration
+- have vscode work well with docker
+- a nice looking console for zsh
+- update screen shots with my own desktop
 
+---
+
+all images thanks to [mkellyxp](https://github.com/mkellyxp/nixbook) creator of nixbook 
+
+---
 
 ## Step 1:  Install NixOS, and choose the No Desktop option.
 
-![Screenshot from 2024-10-12 10-24-21](https://github.com/user-attachments/assets/865760ec-fcd1-4133-be35-5fb5cf0e6638)
+![Screenshot from 2024-10-12 10-24-21 - thanks to mkellyxp](https://github.com/user-attachments/assets/865760ec-fcd1-4133-be35-5fb5cf0e6638)
 
 
 ## Step 2:  Enable unfree software
 
-![Screenshot from 2024-10-12 10-24-31](https://github.com/user-attachments/assets/77b02843-4c3e-409c-82dc-7579578b2582)
+![Screenshot from 2024-10-12 10-24-31 - thanks to mkellyxp](https://github.com/user-attachments/assets/77b02843-4c3e-409c-82dc-7579578b2582)
 
 
 ## Step 3:  Format your drive however you like (erase disk, swap, no hibernate)
 
-![Screenshot from 2024-10-12 10-24-44](https://github.com/user-attachments/assets/968111d9-c018-4be5-8aaa-ee5c647b2617)
+![Screenshot from 2024-10-12 10-24-44 - thanks to mkellyxp](https://github.com/user-attachments/assets/968111d9-c018-4be5-8aaa-ee5c647b2617)
 
 
 ## Step 4:  Reboot, login, and connect to wifi, then hit ESC
@@ -52,27 +65,20 @@ nmtui
 ## Step 5:  Go to /etc and nix-shell git
 ```
 cd /etc/
-nix-shell -p git
+nix-shell -p git https://github.com/salamcast/nixbook-tile.git
 ```
 
 
 ## Step 6:  Clone the nixbook repo  (make sure you run as sudo and you're in /etc!)
 ```
-sudo git clone https://github.com/mkellyxp/nixbook
+sudo git clone 
 ```
 
 ## Step 7:  Run the install script (run this with NO sudo)
 ```
-cd nixbook
-./install.sh
+cd nixbook-tile
+./install-i3.sh
 ```
-
-*or for nixbook lite*
-```
-cd nixbook
-./install_lite.sh
-```
-
 
 ## Step 8:  Enjoy nixbook!
 
@@ -99,13 +105,13 @@ This is a passion project of mine, that I'm using for friends, family, and my lo
 
 ---
 
-If at any point you're having issues with your nixbook not updating, check the auto-update-config service by running 
+If at any point you're having issues with your nixbook-tile not updating, check the auto-update-config service by running 
 
 ```
 sudo systemctl status auto-update-config
 ```
 
-If it shows any errors, go directly to /etc/nixbook and run
+If it shows any errors, go directly to /etc/nixbook-tile and run
 
 ```
 sudo git pull --rebase
