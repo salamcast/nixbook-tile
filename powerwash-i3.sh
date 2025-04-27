@@ -9,14 +9,7 @@ echo "Powerwashing NixBook..."
   # Erase data and set up home directory again
   # Set up local files
   rm -rf ~/
-#  mkdir ~/Desktop
-  mkdir ~/Documents
-  mkdir ~/Downloads
-  mkdir ~/Pictures
-  mkdir ~/Videos
-  mkdir ~/.local
-  mkdir ~/.local/share
-  cp -R /etc/nixbook/config/config ~/.config
+  source ./bin/setup_home.sh
 
   sudo rm -r /var/lib/flatpak
 
@@ -28,11 +21,8 @@ echo "Powerwashing NixBook..."
   # Add flathub and some apps
   sudo flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
 
-  flatpak install flathub us.zoom.Zoom -y
-  flatpak install flathub org.libreoffice.LibreOffice -y
-  
-  # Fix for zoom flatpak
-  flatpak override --env=ZYPAK_ZYGOTE_STRATEGY_SPAWN=0 us.zoom.Zoom
+  source ./bin/setup_flatpak.sh
+
   
   reboot
 else

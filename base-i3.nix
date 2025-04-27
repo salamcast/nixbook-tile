@@ -117,11 +117,13 @@ in
   nixpkgs.config.allowUnfree = true;
 
   environment.systemPackages = with pkgs; [
+    openssh
  	  wget
     zsh
 	  vim
 	  curl
     git
+    gh
     libnotify
     gawk
     gnugrep
@@ -164,9 +166,13 @@ in
     vscode-extensions.github.copilot-chat
     sqlcl
     oracle-instantclient
+    oh-my-zsh
     zsh-powerlevel9k
     zsh-syntax-highlighting
     arandr
+    python312Packages.uv
+    conda
+    positron-bin
   ];
 
   services.flatpak.enable = true;

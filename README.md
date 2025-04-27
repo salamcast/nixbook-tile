@@ -9,11 +9,11 @@ Full video walk through of converting from Windows to Nixbook is now live here:
 
 <https://youtu.be/izvVjfqd5j8?si=ZJAdBZRsQO38YIy5>
 
-my project is froked from this one
+my project is froked from nixbook by mkellyxp
 ---
 
-My **nixbook** version with a tiling window manager:
-- *** my Base System is a ThinkPad E440 with i3 2.4 GHz and 8GB ram ***
+### My **nixbook** version with a tiling window manager:
+my Base System is a **ThinkPad E440** with i3 2.4 GHz and 8GB ram
 - configured i3 desktop and brave browser base
 - Zoom, and Libreoffice installed by default flathub enabled out of the box.
 - Automatic weekly OS updates with 4 weeks of roll backs
@@ -26,8 +26,10 @@ My **nixbook** version with a tiling window manager:
 
 *** work in progress ***
 
-will work to fix any issues with 
 ---
+
+### will work to fix any issues with 
+
 
 - the i3 configuration
 - have vscode work well with docker

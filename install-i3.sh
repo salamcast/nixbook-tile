@@ -6,14 +6,7 @@ if [[ "$answer" =~ ^[Yy]$ ]]; then
 
   # Set up local files
   rm -rf ~/
-#  mkdir ~/Desktop
-  mkdir ~/Documents
-  mkdir ~/Downloads
-  mkdir ~/Pictures
-  mkdir ~/Videos
-  mkdir ~/.local
-  mkdir ~/.local/share
-  cp -R /etc/nixbook/config/config ~/.config
+  source ./bin/setup_home.sh
 
   # The rest of the install should be hands off
   # Add Nixbook config and rebuild
@@ -24,12 +17,7 @@ if [[ "$answer" =~ ^[Yy]$ ]]; then
 
   sudo nixos-rebuild switch
 
-  # Add flathub and some apps
-  flatpak install flathub us.zoom.Zoom -y
-  flatpak install flathub org.libreoffice.LibreOffice -y
-  
-  # Fix for zoom flatpak
-  flatpak override --env=ZYPAK_ZYGOTE_STRATEGY_SPAWN=0 us.zoom.Zoom
+  source ./bin/setup_flatpak.sh
   
   reboot
 else

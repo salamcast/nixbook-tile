@@ -6,4 +6,6 @@ This configuration is based on the i3 configuration provided in [this gist](http
 
 This project builds upon the foundation of [nixbook](https://github.com/mkellyxp/nixbook), originally created by mkellyxp.
 
+The development enviroment is based on concepts from [Remi Krispin](https://github.com/RamiKrispin/awesome-ds-setting/blob/main/README.md#set-up-git-and-ssh) so they can be incorporated into my NixOS image insead of redoing it every time. 
+
 **Note:** This is a personal configuration and reflects the specific needs and preferences of the maintainer, who is new to NixOS. Use with caution and adapt to your own requirements.
