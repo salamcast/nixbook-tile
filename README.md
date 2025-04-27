@@ -10,9 +10,10 @@ Full video walk through of converting from Windows to Nixbook is now live here:
 <https://youtu.be/izvVjfqd5j8?si=ZJAdBZRsQO38YIy5>
 
 my project is froked from nixbook by mkellyxp
+
 ---
 
-### My **nixbook** version with a tiling window manager:
+#### My nixbook version with a tiling window manager:
 my Base System is a **ThinkPad E440** with i3 2.4 GHz and 8GB ram
 - configured i3 desktop and brave browser base
 - Zoom, and Libreoffice installed by default flathub enabled out of the box.
@@ -24,11 +25,11 @@ my Base System is a **ThinkPad E440** with i3 2.4 GHz and 8GB ram
 - ghostty
 - zsh
 
-*** work in progress ***
+**work in progress**
 
 ---
 
-### will work to fix any issues with 
+#### will work to fix any issues with 
 
 
 - the i3 configuration
@@ -59,24 +60,28 @@ all images thanks to [mkellyxp](https://github.com/mkellyxp/nixbook) creator of 
 
 ## Step 4:  Reboot, login, and connect to wifi, then hit ESC
 
+You'll need to setup your network to download the nixbook-tile files
+
 ```
 nmtui
 ```
 
 
 ## Step 5:  Go to /etc and nix-shell git
+
 ```
 cd /etc/
-nix-shell -p git https://github.com/salamcast/nixbook-tile.git
+nix-shell -p git 
 ```
 
 
 ## Step 6:  Clone the nixbook repo  (make sure you run as sudo and you're in /etc!)
 ```
-sudo git clone 
+sudo git clone https://github.com/salamcast/nixbook-tile.git
 ```
 
 ## Step 7:  Run the install script (run this with NO sudo)
+you don't need sudo to run the following command.
 ```
 cd nixbook-tile
 ./install-i3.sh
