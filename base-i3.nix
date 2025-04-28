@@ -50,11 +50,6 @@ in
   services.xserver.displayManager.defaultSession = "none+i3";
   services.xserver.windowManager.i3.enable = true;
 
-  xdg.portal.enable = true;
-  xdg.portal.extraPortals = [
-    xdg-desktop-portal-gtk
-    xdg-desktop-portal-gnome
-  ];
 
   programs.dconf.enable = true;
 
@@ -137,6 +132,13 @@ in
   ];
 
   services.flatpak.enable = true;
+
+  xdg.portal.enable = true;
+
+  xdg.portal.extraPortals = [
+    "gtk"
+    "gnome"
+  ];
 
   programs.zsh.promptInit = "source ${pkgs.zsh-powerlevel9k}/share/zsh-powerlevel9k/powerlevel9k.zsh-theme";
 
