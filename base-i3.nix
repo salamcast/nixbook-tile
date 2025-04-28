@@ -107,16 +107,16 @@ in
     docker-compose
     brave
     vscode
-    vscode-extensions.ms-azuretools-vscode-docker
-    vscode-extensions.ms-python-python
-    vscode-extensions.ms-python-vscode-pylance
-    vscode-extensions.ms-python-debugpy
+    vscode-extensions.ms-azuretools.vscode-docker
+    vscode-extensions.ms-python.python
+    vscode-extensions.ms-python.vscode-pylance
+    vscode-extensions.ms-python.debugpy
     vscode-extensions.ms-toolsai.datawrangler
     vscode-extensions.ms-toolsai.jupyter
     vscode-extensions.ms-toolsai.jupyter-renderers
     vscode-extensions.ms-toolsai.vscode-jupyter-cell-tags
     vscode-extensions.ms-vscode-remote.vscode-remote-extensionpack
-    vscode-extensions.ms-vscode.remote-remote-containers
+    vscode-extensions.ms-vscode-remote.remote-containers
     vscode-extensions.github.codespaces
     vscode-extensions.github.copilot
     vscode-extensions.github.copilot-chat
