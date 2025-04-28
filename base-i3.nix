@@ -44,17 +44,6 @@ in
     DefaultTimeoutStopSec=10s
   '';
 
-  networking.hostName = "nixbook"; # Define your hostname.
-  networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
-
-
-  # Enable networking
-  networking.networkmanager.enable = true;
-
-  # Set your time zone.
-#  time.timeZone = "America/Toronto";
-
-
   # Enable the X11 windowing system.
   services.xserver = {
     enable = true;
@@ -68,20 +57,15 @@ in
         i3status
         #i3pystatus
         i3-open-next-ws
-#	      i3lock
+ 	      i3lock
 	      i3blocks
       ];
     };
   };
-  #services.xserver.enable = true;
-  services.xserver.windowManager.i3.package = pkgs.i3-gaps;
+  xdg.portal.enable = true;
+
   programs.dconf.enable = true;
 
-  # Configure keymap in X11
-  services.xserver = {
-    layout = "us";
-    xkbVariant = "eng";
-  };
 
   # Enable CUPS to print documents.
   services.printing.enable = true;
@@ -92,29 +76,8 @@ in
     openFirewall = true;
   };
 
-  # Enable sound with pipewire.
-  sound.enable = true;
-  hardware.pulseaudio.enable = false;
-  security.rtkit.enable = true;
-  services.pipewire = {
-    enable = true;
-    alsa.enable = true;
-    alsa.support32Bit = true;
-    pulse.enable = true;
-    # If you want to use JACK applications, uncomment this
-    #jack.enable = true;
-
-    # use the example session manager (no others are packaged yet so this is enabled by default,
-    # no need to redefine it in your config for now)
-    #media-session.enable = true;
-  };
-
   services.gvfs.enable = true; # Mount, trash, and other functionalities
   services.tumbler.enable = true; # Thumbnail support for images
-
-
-  # Allow unfree packages
-  nixpkgs.config.allowUnfree = true;
 
   environment.systemPackages = with pkgs; [
     openssh
