@@ -1,15 +1,14 @@
 
 
 # add flatpack name to list
-flatpak << EOF
+fp=$(cat << EOF
 org.libreoffice.LibreOffice
 EOF
-
-for x in $flatpak
+)
+for x in $fp
 do
-  if [ "x$x" != "x" ]; then
-    flatpak install flathub $x -y
-  fi
+  echo -e "$x \n"
+  flatpak install flathub $x -y
 done
 
 

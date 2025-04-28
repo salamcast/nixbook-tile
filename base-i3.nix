@@ -45,23 +45,11 @@ in
   '';
 
   # Enable the X11 windowing system.
-  services.xserver = {
-    enable = true;
-    desktopManager = {xterm.enable=false;};
-    displayManager = {
-      defaultSession = "none+i3";
-    };
-    windowManager.i3 = {
-      enable = true;
-      extraPackages = with pkgs; [
-        i3status
-        #i3pystatus
-        i3-open-next-ws
- 	      i3lock
-	      i3blocks
-      ];
-    };
-  };
+  services.xserver.enable = true;
+  services.xserver.desktopManager.xterm.enable=false;
+  services.xserver.displayManager.defaultSession = "none+i3";
+  services.xserver.windowManager.i3.enable = true;
+  
   xdg.portal.enable = true;
 
   programs.dconf.enable = true;
@@ -80,6 +68,11 @@ in
   services.tumbler.enable = true; # Thumbnail support for images
 
   environment.systemPackages = with pkgs; [
+    i3status
+    i3pystatus
+    i3-open-next-ws
+ 	  i3lock
+	  i3blocks
     openssh
  	  wget
     zsh
