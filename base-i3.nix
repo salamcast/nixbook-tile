@@ -128,7 +128,7 @@ in
     arandr
     python312Packages.uv
     conda
-    positron-bin
+#    positron-bin
   ];
 
 #  services.flatpak.enable = true;
