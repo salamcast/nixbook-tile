@@ -47,7 +47,7 @@ in
   # Enable the X11 windowing system.
   services.xserver.enable = true;
   services.xserver.desktopManager.xterm.enable=false;
-  services.xserver.displayManager.defaultSession = "none+i3";
+  services.displayManager.defaultSession = "none+i3";
   services.xserver.windowManager.i3.enable = true;
 
 
