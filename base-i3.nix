@@ -49,8 +49,12 @@ in
   services.xserver.desktopManager.xterm.enable=false;
   services.xserver.displayManager.defaultSession = "none+i3";
   services.xserver.windowManager.i3.enable = true;
-  
+
   xdg.portal.enable = true;
+  xdg.portal.extraPortals = [
+    xdg-desktop-portal-gtk
+    xdg-desktop-portal-gnome
+  ];
 
   programs.dconf.enable = true;
 
