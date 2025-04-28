@@ -15,11 +15,11 @@ if [[ "$answer" =~ ^[Yy]$ ]]; then
 
   
   # Set up flathub repo while we have sudo
-  nix-shell -p flatpak --run 'sudo flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo'
+ # nix-shell -p flatpak --run 'sudo flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo'
 
   sudo nixos-rebuild switch
 
-  source ./bin/setup_flatpak.sh
+#  source ./bin/setup_flatpak.sh
   
   sudo usermod -a -G docker $(whoami)
 

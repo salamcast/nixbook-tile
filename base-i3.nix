@@ -83,10 +83,10 @@ in
     gawk
     gnugrep
     sudo
-    gnome-software
+#    gnome-software
     gnome-calculator
     gnome-screenshot
-    flatpak
+#    flatpak
 #    xdg-desktop-portal
 #    xdg-desktop-portal-gtk
 #    xdg-desktop-portal-gnome
@@ -131,20 +131,20 @@ in
     positron-bin
   ];
 
-  services.flatpak.enable = true;
+#  services.flatpak.enable = true;
 
-  xdg.portal.enable = true;
-  xdg.portal.extraPortals = [
-    "gtk"
-    "gnome"
-  ];
+#  xdg.portal.enable = true;
+#  xdg.portal.extraPortals = [
+#    "gtk"
+#    "gnome"
+#  ];
 
 #  xdg.portal.configPackages = [
 #    "xdg-desktop-portal-gtk"
 #    "xdg-desktop-portal-gnome"
 #  ];
 
-  xdg.portal.config.common.default = "*";
+# xdg.portal.config.common.default = "*";
 
   programs.zsh.promptInit = "source ${pkgs.zsh-powerlevel9k}/share/zsh-powerlevel9k/powerlevel9k.zsh-theme";
 

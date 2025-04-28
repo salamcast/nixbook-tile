@@ -19,9 +19,9 @@ echo "Powerwashing NixBook..."
   sudo nixos-rebuild list-generations
 
   # Add flathub and some apps
-  sudo flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
+#  sudo flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
 
-  source ./bin/setup_flatpak.sh
+#  source ./bin/setup_flatpak.sh
 
   
   reboot
