@@ -87,9 +87,9 @@ in
     gnome-calculator
     gnome-screenshot
     flatpak
-    xdg-desktop-portal
-    xdg-desktop-portal-gtk
-    xdg-desktop-portal-gnome
+#    xdg-desktop-portal
+#    xdg-desktop-portal-gtk
+#    xdg-desktop-portal-gnome
     system-config-printer
 	  neofetch
 	  rofi
@@ -134,16 +134,17 @@ in
   services.flatpak.enable = true;
 
   xdg.portal.enable = true;
-
-  xdg.portal.config.common.default = "*";
   xdg.portal.extraPortals = [
     "gtk"
     "gnome"
   ];
-  xdg.portal.configPackages = [
-    "xdg-desktop-portal-gtk"
-    "xdg-desktop-portal-gnome"
-  ];
+
+#  xdg.portal.configPackages = [
+#    "xdg-desktop-portal-gtk"
+#    "xdg-desktop-portal-gnome"
+#  ];
+
+  xdg.portal.config.common.default = "*";
 
   programs.zsh.promptInit = "source ${pkgs.zsh-powerlevel9k}/share/zsh-powerlevel9k/powerlevel9k.zsh-theme";
 
