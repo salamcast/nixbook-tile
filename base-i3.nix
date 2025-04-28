@@ -136,6 +136,10 @@ in
   xdg.portal.enable = true;
 
   xdg.portal.config.common.default = "*";
+  xdg.portal.extraPortals = [
+    "xdg-desktop-portal-gtk"
+    "xdg-desktop-portal-gnome"
+  ];
   xdg.portal.configPackages = [
     "xdg-desktop-portal-gtk"
     "xdg-desktop-portal-gnome"
