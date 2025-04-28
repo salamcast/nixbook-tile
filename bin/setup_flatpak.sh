@@ -7,7 +7,9 @@ EOF
 
 for x in $flatpak
 do
-  flatpak install flathub $x -y
+  if [ "x$x" != "x" ]; then
+    flatpak install flathub $x -y
+  fi
 done
 
 

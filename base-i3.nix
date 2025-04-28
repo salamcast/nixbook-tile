@@ -52,7 +52,7 @@ in
   networking.networkmanager.enable = true;
 
   # Set your time zone.
-  time.timeZone = "America/Toronto";
+#  time.timeZone = "America/Toronto";
 
 
   # Enable the X11 windowing system.
