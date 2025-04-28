@@ -137,8 +137,8 @@ in
 
   xdg.portal.config.common.default = "*";
   xdg.portal.extraPortals = [
-    "xdg-desktop-portal-gtk"
-    "xdg-desktop-portal-gnome"
+    "gtk"
+    "gnome"
   ];
   xdg.portal.configPackages = [
     "xdg-desktop-portal-gtk"
