@@ -135,8 +135,10 @@ in
 
   xdg.portal.enable = true;
 
-  xdg.portal.extraPortals.gtk = true;
-  xdg.portal.extraPortals.gnome = true;
+  xdg.portal.extraPortals = [
+    "xdg-desktop-portal-gtk"
+    "xdg-desktop-portal-gnome"
+  ];
 
   programs.zsh.promptInit = "source ${pkgs.zsh-powerlevel9k}/share/zsh-powerlevel9k/powerlevel9k.zsh-theme";
 
