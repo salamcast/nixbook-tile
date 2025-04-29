@@ -37,6 +37,10 @@ let
       ${pkgs.nix}/bin/nix-channel --update
     fi
   '';
+
+  
+environment.pathsToLink = [ "/libexec" ];
+
 in
 {
   zramSwap.enable = true;
@@ -45,14 +49,26 @@ in
   '';
 
   # Enable the X11 windowing system.
-  services.xserver.enable = true;
-  services.xserver.desktopManager.xterm.enable=false;
-  services.displayManager.defaultSession = "none+i3";
-  services.xserver.windowManager.i3.enable = true;
+  
+  services.xserver = {
+    enable = true;   
+    desktopManager = {
+      xterm.enable = false;
+      xfce = {
+        enable = true;
+        noDesktop = true;
+        enableXfwm = false;
+      };
+    };
+    windowManager.i3 = {
+      enable = true;
+      package = pkgs.i3-gaps;
 
+    };
+  };
+  services.displayManager.defaultSession = "xfce";
 
   programs.dconf.enable = true;
-
 
   # Enable CUPS to print documents.
   services.printing.enable = true;
@@ -83,13 +99,11 @@ in
     gawk
     gnugrep
     sudo
-#    gnome-software
-    gnome-calculator
-    gnome-screenshot
+    gnome-software
+    xfce4-screenshooter
 #    flatpak
-#    xdg-desktop-portal
-#    xdg-desktop-portal-gtk
-#    xdg-desktop-portal-gnome
+    xdg-desktop-portal
+    xdg-desktop-portal-xapp
     system-config-printer
 	  neofetch
 	  rofi
@@ -122,29 +136,17 @@ in
     vscode-extensions.github.copilot-chat
     sqlcl
     oracle-instantclient
-    oh-my-zsh
-    zsh-powerlevel9k
-    zsh-syntax-highlighting
     arandr
     python312Packages.uv
     conda
-#    positron-bin
+
   ];
 
-#  services.flatpak.enable = true;
+  services.flatpak.enable = true;
 
-#  xdg.portal.enable = true;
-#  xdg.portal.extraPortals = [
-#    "gtk"
-#    "gnome"
-#  ];
+  xdg.portal.enable = true;
 
-#  xdg.portal.configPackages = [
-#    "xdg-desktop-portal-gtk"
-#    "xdg-desktop-portal-gnome"
-#  ];
-
-# xdg.portal.config.common.default = "*";
+  xdg.portal.config.common.default = "*";
 
   programs.zsh.promptInit = "source ${pkgs.zsh-powerlevel9k}/share/zsh-powerlevel9k/powerlevel9k.zsh-theme";
 
