@@ -20,9 +20,9 @@ if [[ "$answer" =~ ^[Yy]$ ]]; then
   sudo sed -i "/services.getty.autologinUser = \"$(whoami)\";/a\ $autologin" /etc/nixos/configuration.nix
   
   # add docker group after wheel group
-  sudo sed -i "/\"wheel\"/i \"docker\" " /etc/nixos/configuration.nix
+  sudo sed -i "/$autologin/a\  users.extraGroups.docker.members = [ \"$(whoami)\" ];" /etc/nixos/configuration.nix
 
-  sudo sed -i "/pkgs; \[\];/a\   shell = pkgs.zsh;" /etc/nixos/configuration.nix
+  sudo sed -i "/pkgs; \[\];/a\    shell = pkgs.zsh;" /etc/nixos/configuration.nix
 
   # Set up flathub repo while we have sudo
   nix-shell -p flatpak --run 'sudo flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo'
