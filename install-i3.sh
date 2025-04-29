@@ -13,7 +13,7 @@ if [[ "$answer" =~ ^[Yy]$ ]]; then
   sudo sed -i '/hardware-configuration\.nix/a\      /etc/nixbook-tile/base-i3.nix' /etc/nixos/configuration.nix
 
   autologin="services.displayManager.autoLogin = { enable = true; user = \"$(whoami)\"; };"
-  
+
   sudo sed -i "/service.getty.autologinUser = \"$(whoami)\";/a\ $autologin" /etc/nixos/configuration.nix
   # Set up flathub repo while we have sudo
  # nix-shell -p flatpak --run 'sudo flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo'
@@ -22,7 +22,7 @@ if [[ "$answer" =~ ^[Yy]$ ]]; then
 
 #  source ./bin/setup_flatpak.sh
   
-  sudo usermod -a -G docker -s /bin/zsh $(whoami)
+  sudo usermod -a -G docker -s /run/current-system/sw/bin/zsh $(whoami)
 
   reboot
 else
