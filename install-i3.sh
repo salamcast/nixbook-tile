@@ -20,7 +20,7 @@ if [[ "$answer" =~ ^[Yy]$ ]]; then
   sudo sed -i "/services.getty.autologinUser = \"$(whoami)\";/a\ $autologin" /etc/nixos/configuration.nix
   
   # add docker group after wheel group
-  sudo sed -i "/\"wheel\"/i\ \"docker\" " /etc/nixos/configuration.nix
+  sudo sed -i "/\"wheel\"/i \"docker\" " /etc/nixos/configuration.nix
 
   sudo sed -i "/pkgs; \[\];/a\   shell = pkgs.zsh;" /etc/nixos/configuration.nix
 
