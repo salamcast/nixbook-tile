@@ -101,7 +101,7 @@ in
     sudo
     gnome-software
     xfce.xfce4-screenshooter
-#    flatpak
+    flatpak
     xdg-desktop-portal
     xdg-desktop-portal-xapp
     system-config-printer

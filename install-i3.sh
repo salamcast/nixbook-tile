@@ -14,7 +14,7 @@ if [[ "$answer" =~ ^[Yy]$ ]]; then
 
   autologin="services.displayManager.autoLogin = { enable = true; user = \"$(whoami)\"; };"
 
-  sudo sed -i "/service.getty.autologinUser = \"$(whoami)\";/a\ $autologin" /etc/nixos/configuration.nix
+  sudo sed -i "/services.getty.autologinUser = \"$(whoami)\";/a\ $autologin" /etc/nixos/configuration.nix
   # Set up flathub repo while we have sudo
  # nix-shell -p flatpak --run 'sudo flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo'
 
