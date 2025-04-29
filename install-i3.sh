@@ -12,7 +12,7 @@ if [[ "$answer" =~ ^[Yy]$ ]]; then
   # Add Nixbook config and rebuild
   sudo sed -i '/hardware-configuration\.nix/a\      /etc/nixbook-tile/base-i3.nix' /etc/nixos/configuration.nix
 
-  autologin="services.displayManager.autoLogin.user=\"$(whoami)\"; };"
+  autologin="services.displayManager.autoLogin.user=\"$(whoami)\";"
 
   sudo sed -i "/services.getty.autologinUser = \"$(whoami)\";/a\ $autologin" /etc/nixos/configuration.nix
   
