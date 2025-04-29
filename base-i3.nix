@@ -66,7 +66,7 @@ in
 
     };
   };
-  services.displayManager.defaultSession = "xfce";
+  services.displayManager.defaultSession = "xfce+i3";
 
   programs.dconf.enable = true;
 
@@ -151,6 +151,7 @@ in
   ];
   xdg.portal.config.common.default = [ "xapp" ];
 
+  virtualisation.docker.enable = true;
 
   nix.gc = {
     automatic = true;
