@@ -144,10 +144,10 @@ bindsym $mod+Shift+r restart
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
 
 
-mode "nixbook" {
-        bindsym p exec 'xterm -bg black /etc/nixbook-tile/powerwash-i3.sh'
-        bindsym u exec 'xterm -bg black /etc/nixbook-tile/update.sh'
-        bindsym s exec 'xterm -bg black /etc/nixbook-tile/update_shutdown.sh'
+mode "nixbook | p powerwash | u update | s shutdown" {
+        bindsym p exec 'kitty /etc/nixbook-tile/powerwash-i3.sh'
+        bindsym u exec 'kitty /etc/nixbook-tile/update.sh'
+        bindsym s exec 'kitty /etc/nixbook-tile/update_shutdown.sh'
         # back to normal: Enter or Escape or $mod+r
         bindsym Return mode "default"
         bindsym Escape mode "default"
@@ -194,8 +194,8 @@ bar {
 			statusline #d3c6aa
 		}
 }
-gaps inner 11
-gaps outer 11
+gaps inner 6
+gaps outer 4
 
 smart_gaps on
 

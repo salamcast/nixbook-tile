@@ -63,11 +63,30 @@ in
     windowManager.i3 = {
       enable = true;
       package = pkgs.i3-gaps;
+      extraPackages = with pkgs; [
+        i3status
+        i3pystatus
+        i3-open-next-ws
+ 	      i3lock
+	      i3blocks
+        rofi
+     ];
 
     };
   };
   services.displayManager.defaultSession = "xfce+i3";
-
+  environment.xfce.excludePackages = with pkgs.xfce; [
+    mousepad
+    parole
+   # ristretto
+    xfce4-appfinder
+   # xfce4-notifyd
+   # xfce4-screenshooter
+   # xfce4-session
+   # xfce4-settings
+   # xfce4-taskmanager
+    xfce4-terminal 
+  ];
 
   programs.dconf.enable = true;
 
@@ -84,11 +103,6 @@ in
   services.tumbler.enable = true; # Thumbnail support for images
 
   environment.systemPackages = with pkgs; [
-    i3status
-    i3pystatus
-    i3-open-next-ws
- 	  i3lock
-	  i3blocks
     openssh
  	  wget
     zsh
@@ -107,12 +121,10 @@ in
     xdg-desktop-portal-xapp
     system-config-printer
 	  neofetch
-	  rofi
 	  xfce.thunar
 	  htop
 	  feh
 	  lxappearance
-	  imagemagick
 	  zip
 	  jq
 	  unzip
@@ -122,25 +134,11 @@ in
     docker-compose
     brave
     vscode
-    vscode-extensions.ms-azuretools.vscode-docker
-    vscode-extensions.ms-python.python
-    vscode-extensions.ms-python.vscode-pylance
-    vscode-extensions.ms-python.debugpy
-    vscode-extensions.ms-toolsai.datawrangler
-    vscode-extensions.ms-toolsai.jupyter
-    vscode-extensions.ms-toolsai.jupyter-renderers
-    vscode-extensions.ms-toolsai.vscode-jupyter-cell-tags
-    vscode-extensions.ms-vscode-remote.vscode-remote-extensionpack
-    vscode-extensions.ms-vscode-remote.remote-containers
-    vscode-extensions.github.codespaces
-    vscode-extensions.github.copilot
-    vscode-extensions.github.copilot-chat
+    # removed extentions because they didnt show up in vscode
     sqlcl
     oracle-instantclient
     arandr
-    python312Packages.uv
-    conda
-
+    #sane-airscan
   ];
 
   services.flatpak.enable = true;
@@ -153,6 +151,8 @@ in
   xdg.portal.config.common.default = [ "xapp" ];
 
   virtualisation.docker.enable = true;
+
+programs.zsh.enable = true;
 
   nix.gc = {
     automatic = true;

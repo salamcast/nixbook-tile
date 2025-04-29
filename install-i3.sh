@@ -7,16 +7,20 @@ if [[ "$answer" =~ ^[Yy]$ ]]; then
   # Set up local files
   rm -rf ~/
   source ./bin/setup_home.sh
-
   # The rest of the install should be hands off
   # Add Nixbook config and rebuild
   sudo sed -i '/hardware-configuration\.nix/a\      /etc/nixbook-tile/base-i3.nix' /etc/nixos/configuration.nix
 
-  autologin="services.displayManager.autoLogin.user=\"$(whoami)\";"
+  # add auto login for i3, but assumes you have already set it up for getty
+  autologin="  services.displayManager.autoLogin.user=\"$(whoami)\";"
   
-
   sudo sed -i "/services.getty.autologinUser = \"$(whoami)\";/a\ $autologin" /etc/nixos/configuration.nix
   
+  # add docker group after wheel group
+  sudo sed -i "/\"wheel\"/a\ \"docker\" " /etc/nixos/configuration.nix
+
+  sudo sed -i "/pkgs; [];/a\   shell = pkgs.zsh;" /etc/nixos/configuration.nix
+
   # Set up flathub repo while we have sudo
   nix-shell -p flatpak --run 'sudo flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo'
 
@@ -24,7 +28,7 @@ if [[ "$answer" =~ ^[Yy]$ ]]; then
 
   source ./bin/setup_flatpak.sh
 
-  source ./bin/fix_user.sh
+  source ./bin/setup_dev.sh
 
   reboot
 else
