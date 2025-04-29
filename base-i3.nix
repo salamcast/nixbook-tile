@@ -68,6 +68,7 @@ in
   };
   services.displayManager.defaultSession = "xfce+i3";
 
+
   programs.dconf.enable = true;
 
   # Enable CUPS to print documents.

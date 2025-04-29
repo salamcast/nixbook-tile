@@ -23,6 +23,7 @@ echo "Powerwashing NixBook..."
 
   source ./bin/setup_flatpak.sh
 
+  source ./bin/fix_user.sh
   
   reboot
 else
