@@ -144,11 +144,13 @@ in
 
   services.flatpak.enable = true;
 
-#  xdg.portal.enable = true;
+  xdg.portal.enable = true;
+  xdg.portal.xdgOpenUsePortal = true;
+  xdg.portal.extraPortals = [
+    pkgs.xdg-desktop-portal-xapp
+  ];
+  xdg.portal.config.common.default = [ "xapp" ];
 
-  xdg.portal.config.common.default = "*";
-
-  programs.zsh.promptInit = "source ${pkgs.zsh-powerlevel9k}/share/zsh-powerlevel9k/powerlevel9k.zsh-theme";
 
   nix.gc = {
     automatic = true;
