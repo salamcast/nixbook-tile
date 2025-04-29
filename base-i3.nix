@@ -100,7 +100,7 @@ in
     gnugrep
     sudo
     gnome-software
-    xfce4-screenshooter
+    xfce4.screenshooter
 #    flatpak
     xdg-desktop-portal
     xdg-desktop-portal-xapp
