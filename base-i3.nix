@@ -74,6 +74,7 @@ in
 
     };
   };
+  
   services.displayManager.defaultSession = "xfce+i3";
   environment.xfce.excludePackages = with pkgs.xfce; [
     mousepad
