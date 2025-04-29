@@ -15,14 +15,14 @@ if [[ "$answer" =~ ^[Yy]$ ]]; then
   sudo sed -i '/hardware-configuration\.nix/a\      /etc/nixbook-tile/base-i3.nix' /etc/nixos/configuration.nix
 
   # add auto login for i3, but assumes you have already set it up for getty
-  autologin="  services.displayManager.autoLogin.user=\"$(whoami)\";"
+  autologin=" services.displayManager.autoLogin.user=\"$(whoami)\";"
   
   sudo sed -i "/services.getty.autologinUser = \"$(whoami)\";/a\ $autologin" /etc/nixos/configuration.nix
   
   # add docker group after wheel group
-  sudo sed -i "/\"wheel\"/a\ \"docker\" " /etc/nixos/configuration.nix
+  sudo sed -i "/\"wheel\"/i\ \"docker\" " /etc/nixos/configuration.nix
 
-  sudo sed -i "/pkgs; [];/a\   shell = pkgs.zsh;" /etc/nixos/configuration.nix
+  sudo sed -i "/pkgs; \[\];/a\   shell = pkgs.zsh;" /etc/nixos/configuration.nix
 
   # Set up flathub repo while we have sudo
   nix-shell -p flatpak --run 'sudo flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo'
