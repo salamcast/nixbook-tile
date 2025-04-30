@@ -225,7 +225,7 @@ programs.zsh.enable = true;
     after = [ "network-online.target" "graphical.target" ];
     wants = [ "network-online.target" ];
   };
-  
+  networking.usePredictableInterfaceNames = false;
 }
 
 # Notes

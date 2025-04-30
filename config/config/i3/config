@@ -195,7 +195,8 @@ bindsym $mod+r mode "resize"
 #		}
 #}
 
-exec_always --no-startup-id $HOME/.config/polybar/launch.sh
+# need to prefix script with bash to run it, not in /bin/bash on nixos
+exec_always --no-startup-id "bash $HOME/.config/polybar/launch.sh"
 
 gaps inner 6
 gaps outer 4
