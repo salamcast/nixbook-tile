@@ -18,7 +18,9 @@ if [[ "$answer" =~ ^[Yy]$ ]]; then
   autologin=" services.displayManager.autoLogin.user=\"$(whoami)\";"
   
   sudo sed -i "/services.getty.autologinUser = \"$(whoami)\";/a\ $autologin" /etc/nixos/configuration.nix
-  
+
+  sudo sed -i "/$autologin/a\  environment.pathsToLink = [ "/libexec" ];" /etc/nixos/configuration.nix
+
   # add docker group after wheel group
   sudo sed -i "/$autologin/a\  users.extraGroups.docker.members = [ \"$(whoami)\" ];" /etc/nixos/configuration.nix
 

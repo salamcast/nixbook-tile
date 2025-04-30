@@ -38,9 +38,6 @@ let
     fi
   '';
 
-  
-environment.pathsToLink = [ "/libexec" ];
-
 in
 {
   zramSwap.enable = true;
@@ -64,8 +61,8 @@ in
       enable = true;
       package = pkgs.i3-gaps;
       extraPackages = with pkgs; [
+        polybarFull
         i3status
-        i3pystatus
         i3-open-next-ws
  	      i3lock
 	      i3blocks
