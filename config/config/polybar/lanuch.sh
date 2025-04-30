@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/run/current-system/sw/bin/bash
 # based on https://wiki.gentoo.org/wiki/Polybar
 # Terminate already running bar instances
 killall -q polybar
