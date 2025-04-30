@@ -3,6 +3,8 @@
 # add flatpack name to list
 fp=$(cat << EOF
 org.libreoffice.LibreOffice
+ro.go.hmlendea.DL-Desktop
+
 EOF
 )
 for x in $fp
