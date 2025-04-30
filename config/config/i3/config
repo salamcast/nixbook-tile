@@ -195,7 +195,7 @@ bindsym $mod+r mode "resize"
 #		}
 #}
 
-exec_always --no-startup-id $HOME/.config/polybar/launch.sh
+exec_always --no-startup-id ~/.config/polybar/launch.sh
 
 gaps inner 6
 gaps outer 4
@@ -214,7 +214,7 @@ bindsym $mod+Shift+f exec thunar
 #vscode
 bindsym $mod+c exec code
 
-exec feh --bg-scale /home/$USER/.config/i3/images/nixbook.png
+exec feh --bg-scale ~/.config/i3/images/nixbook.png
 #open the default browser by default
 exec brave
 

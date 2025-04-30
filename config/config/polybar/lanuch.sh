@@ -1,7 +1,7 @@
 #!/run/current-system/sw/bin/bash
 # based on https://wiki.gentoo.org/wiki/Polybar
 # Terminate already running bar instances
-killall -q polybar
+#killall -q polybar
 # If all your bars have ipc enabled, you can also use 
 # polybar-msg cmd quit
 

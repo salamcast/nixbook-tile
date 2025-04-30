@@ -1,4 +1,4 @@
-
+#!/run/current-system/sw/bin/bash
 
 # add flatpack name to list
 fp=$(cat << EOF

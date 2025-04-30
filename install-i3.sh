@@ -35,6 +35,8 @@ if [[ "$answer" =~ ^[Yy]$ ]]; then
 
   source ./bin/setup_dev.sh
 
+  source ./bin/install_config.sh
+
   reboot
 else
   echo "Nixbook-tile Install Cancelled!"

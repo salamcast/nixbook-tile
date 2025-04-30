@@ -25,6 +25,8 @@ echo "Powerwashing NixBook..."
 
   source ./bin/setup_dev.sh
 
+  source ./bin/install_config.sh
+  
   reboot
 else
   echo "Powerwashing Cancelled!"

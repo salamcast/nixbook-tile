@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/run/current-system/sw/bin/bash
 if [ $# -eq 1 ]
 then
     email=$1
