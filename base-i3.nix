@@ -111,6 +111,7 @@ in
     libnotify
     gawk
     gnugrep
+    pulseaudio
     sudo
     gnome-software
     xfce.xfce4-screenshooter

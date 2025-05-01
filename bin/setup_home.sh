@@ -7,5 +7,5 @@
   mkdir ~/.local 2>/dev/null
   mkdir ~/.local/share 2>/dev/null
   mkdir ~/.config 2>/dev/null
-
+  mkdir ~/.local 2>/dev/null
  
