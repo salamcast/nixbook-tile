@@ -2,7 +2,7 @@ echo "This will delete ALL local files and convert this machine to a Nixbook-til
 read -p "Do you want to continue? (y/n): " answer
 
 if [[ "$answer" =~ ^[Yy]$ ]]; then
-  echo "Installing i3 NixBook-tile Family version..."
+  echo "Installing i3 NixBook-tile..."
 
   # Set up local files
   rm -rf ~/
@@ -12,7 +12,7 @@ if [[ "$answer" =~ ^[Yy]$ ]]; then
 
   sudo cp /etc/nixos/configuration.nix /etc/nixos/configuration.nix.old
 
-  sudo sed -i '/hardware-configuration\.nix/a\      /etc/nixbook-tile/base-fam.nix' /etc/nixos/configuration.nix
+  sudo sed -i '/hardware-configuration\.nix/a\      /etc/nixbook-tile/i3.nix' /etc/nixos/configuration.nix
 
   # add auto login for i3, but assumes you have already set it up for getty
   autologin=" services.displayManager.autoLogin.user=\"$(whoami)\";"
@@ -22,7 +22,7 @@ if [[ "$answer" =~ ^[Yy]$ ]]; then
   sudo sed -i "/$autologin/a\  environment.pathsToLink = [ \"/libexec\" ];" /etc/nixos/configuration.nix
 
   # add docker group after wheel group
-#  sudo sed -i "/$autologin/a\  users.extraGroups.docker.members = [ \"$(whoami)\" ];" /etc/nixos/configuration.nix
+  sudo sed -i "/$autologin/a\  users.extraGroups.docker.members = [ \"$(whoami)\" ];" /etc/nixos/configuration.nix
 
   sudo sed -i "/pkgs; \[\];/a\    shell = pkgs.zsh;" /etc/nixos/configuration.nix
 

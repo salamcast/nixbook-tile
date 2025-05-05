@@ -5,14 +5,14 @@ if [[ "$answer" =~ ^[Yy]$ ]]; then
   echo "Installing i3 NixBook-tile..."
 
   # Set up local files
-  rm -rf ~/
+  #rm -rf ~/
   source ./bin/setup_home.sh
   # The rest of the install should be hands off
   # Add Nixbook config and rebuild
 
   sudo cp /etc/nixos/configuration.nix /etc/nixos/configuration.nix.old
 
-  sudo sed -i '/hardware-configuration\.nix/a\      /etc/nixbook-tile/base-i3.nix' /etc/nixos/configuration.nix
+  sudo sed -i '/hardware-configuration\.nix/a\      /etc/nixbook-tile/i3.nix' /etc/nixos/configuration.nix
 
   # add auto login for i3, but assumes you have already set it up for getty
   autologin=" services.displayManager.autoLogin.user=\"$(whoami)\";"

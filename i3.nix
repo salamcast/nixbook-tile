@@ -62,7 +62,7 @@ in
       package = pkgs.i3-gaps;
       extraPackages = with pkgs; [
         polybarFull
-        i3status
+        #i3status
         i3-open-next-ws
  	      i3lock
 	      i3blocks
@@ -107,9 +107,11 @@ in
 	  vim
 	  curl
     git
+    gh
     libnotify
     gawk
     gnugrep
+    pulseaudio
     sudo
     gnome-software
     xfce.xfce4-screenshooter
@@ -123,12 +125,22 @@ in
 	  feh
 	  lxappearance
 	  zip
+    p7zip
+	  jq
 	  unzip
     ghostty
     kitty
+    docker
+    docker-compose
     brave
+    vscode
+    # removed extentions because they didnt show up in vscode
+    sqlcl
+    oracle-instantclient
     arandr
-    #sane-airscan
+    sane-airscan
+    font-awesome
+    nerdfonts.override { fonts = [ "JetBrainsMono" "FontAwesome" "Symbols" "DejaVuSans" ]; }
   ];
 
   services.flatpak.enable = true;

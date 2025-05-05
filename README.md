@@ -14,12 +14,13 @@ my project is froked from nixbook by mkellyxp
 ---
 
 #### My nixbook version with a tiling window manager:
-my Base System is a **ThinkPad E440** with i3 2.4 GHz and 8GB ram
+my Base System is a **ThinkPad E440** with i3 2.4 GHz and 12GB ram
 - configured i3 desktop and brave browser base
-- Zoom, and Libreoffice installed by default flathub enabled out of the box.
+- Zoom, and Libreoffice installed by default
+- Flathub enabled out of the box.
 - Automatic weekly OS updates with 4 weeks of roll backs
 - Daily flatpak updates
-- vscode and some estensions
+- vscode
 - docker
 - oracle cli
 - ghostty
@@ -32,30 +33,33 @@ my Base System is a **ThinkPad E440** with i3 2.4 GHz and 8GB ram
 #### will work to fix any issues with 
 
 
-- the i3 configuration
+- improve the i3 configuration
 - have vscode work well with docker
 - a nice looking console for zsh
-- update screen shots with my own desktop
+- need to have a guide for keyboard shortcuts for i3
+- map all posible media keys for base NixOS apps in i3
+- need to add a E-mail client
+- need to add a media player, mplayer or VLC 
 
 ---
 
-all images thanks to [mkellyxp](https://github.com/mkellyxp/nixbook) creator of nixbook 
+Step 1 to 3 images thanks to [mkellyxp](https://github.com/mkellyxp/nixbook) creator of nixbook for installing a minimal nixos base system without a desktop and non-free software. I chose to use my swap for hibernate, and it works on my ThinkPad!!
 
 ---
 
 ## Step 1:  Install NixOS, and choose the No Desktop option.
 
-![Screenshot from 2024-10-12 10-24-21 - thanks to mkellyxp](https://github.com/user-attachments/assets/865760ec-fcd1-4133-be35-5fb5cf0e6638)
+![Select no desktop - img thanks to mkellyxp](https://github.com/user-attachments/assets/865760ec-fcd1-4133-be35-5fb5cf0e6638)
 
 
 ## Step 2:  Enable unfree software
 
-![Screenshot from 2024-10-12 10-24-31 - thanks to mkellyxp](https://github.com/user-attachments/assets/77b02843-4c3e-409c-82dc-7579578b2582)
+![Select non free software - img thanks to mkellyxp](https://github.com/user-attachments/assets/77b02843-4c3e-409c-82dc-7579578b2582)
 
 
-## Step 3:  Format your drive however you like (erase disk, swap, no hibernate)
+## Step 3:  Format your drive however you like (erase disk, swap with hibernate)
 
-![Screenshot from 2024-10-12 10-24-44 - thanks to mkellyxp](https://github.com/user-attachments/assets/968111d9-c018-4be5-8aaa-ee5c647b2617)
+![Erase disk, I used swap with hibernate - img thanks to mkellyxp](https://github.com/user-attachments/assets/968111d9-c018-4be5-8aaa-ee5c647b2617)
 
 
 ## Step 4:  Reboot, login, and connect to wifi, then hit ESC
@@ -83,15 +87,15 @@ sudo git clone https://github.com/salamcast/nixbook-tile.git
 ## Step 7:  Run the install script (run this with NO sudo)
 you don't need sudo to run the following command.
 ```
-cd nixbook-tile
-./install-i3.sh
+cd /etc/nixbook-tile
+./install-clean.sh
 ```
 
 ## Step 8:  Enjoy nixbook!
 
-You can always manually run updates by running **Update and Reboot** in the menu.
+You can always manually run updates by pressing WinLogo + Shift + Esc, then u to **Update** and r to **Update & Reboot** in the menu.
 
-If you want to completely reset this nixbook, wipe off your personal data to give it to someone else, or start fresh, run **Powerwash** from the menu.
+If you want to completely reset this nixbook, wipe off your personal data to give it to someone else, or start fresh, run **Powerwash** by pressing WinLogo + Shift + Esc, then p.
 
 ---
 
@@ -101,15 +105,11 @@ Notes:
 - Don't modify the .nix files in this repo, as they'll get overwritten on update.  If you want to customize, put your nix changes directly into /etc/nixos/configuration.nix
 
 
-![Screenshot from 2024-10-12 10-40-07](https://github.com/user-attachments/assets/3540074a-e11e-4a88-a812-4ef3d4c83f0b)
+![Brave Browser](./images/start.png)
 
-![Screenshot from 2024-10-12 10-40-36](https://github.com/user-attachments/assets/6f62f3da-4a4c-464a-b75b-2046ff4d9162)
+![neofetch in kitty](./images/neofetch.png)
 
-
----
-
-This is a passion project of mine, that I'm using for friends, family, and my local community at large.  If you have any feedback or suggestions, please feel free to open an issue, pull request or just message me.
-
+![htop in kitty](./images/htop.png)
 ---
 
 If at any point you're having issues with your nixbook-tile not updating, check the auto-update-config service by running 
