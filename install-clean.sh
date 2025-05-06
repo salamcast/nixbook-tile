@@ -30,12 +30,16 @@ if [[ "$answer" =~ ^[Yy]$ ]]; then
   nix-shell -p flatpak --run 'sudo flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo'
 
   sudo nixos-rebuild switch
+  
+  # waydroid untested, will run in cage
+  sudo waydroid init -s GAPPS -f
 
   source ./bin/setup_flatpak.sh
 
   source ./bin/setup_dev.sh
 
   source ./bin/install_config.sh
+
 
   reboot
 else

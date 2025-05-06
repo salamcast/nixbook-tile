@@ -76,7 +76,7 @@ in
   environment.xfce.excludePackages = with pkgs.xfce; [
     mousepad
     parole
-   # ristretto
+    ristretto
     xfce4-appfinder
    # xfce4-notifyd
    # xfce4-screenshooter
@@ -102,6 +102,8 @@ in
 
   environment.systemPackages = with pkgs; [
     openssh
+    exfatprogs
+    ntfs3g
  	  wget
     zsh
 	  vim
@@ -113,8 +115,9 @@ in
     gnugrep
     pulseaudio
     sudo
+    parted
     gnome-software
-    xfce.xfce4-screenshooter
+    #xfce.xfce4-screenshooter
     flatpak
     xdg-desktop-portal
     xdg-desktop-portal-xapp
@@ -133,14 +136,18 @@ in
     docker
     docker-compose
     brave
+    thunderbird-latest-bin
+    filezilla
     vscode
-    # removed extentions because they didnt show up in vscode
     sqlcl
     oracle-instantclient
     arandr
+    synergy
     sane-airscan
     font-awesome
     nerdfonts.override { fonts = [ "JetBrainsMono" "FontAwesome" "Symbols" "DejaVuSans" ]; }
+    cage
+    waydroid
   ];
 
   services.flatpak.enable = true;
@@ -153,6 +160,7 @@ in
   xdg.portal.config.common.default = [ "xapp" ];
 
   virtualisation.docker.enable = true;
+  virtualisation.waydroid.enable = true;
 
 programs.zsh.enable = true;
 
