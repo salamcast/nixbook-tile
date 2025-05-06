@@ -145,11 +145,11 @@ in
     synergy
     sane-airscan
     font-awesome
-    nerdfonts.override { fonts = [ "JetBrainsMono" "FontAwesome" "Symbols" "DejaVuSans" ]; }
+    nerdfonts
     cage
     waydroid
   ];
-
+# .override { fonts = [ "JetBrainsMono" "FontAwesome" "Symbols" "DejaVuSans" ]; }
   services.flatpak.enable = true;
 
   xdg.portal.enable = true;
