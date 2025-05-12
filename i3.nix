@@ -136,7 +136,7 @@ in
     docker
     docker-compose
     brave
-    thunderbird-latest-bin
+    #thunderbird-latest-bin
     filezilla
     vscode
     sqlcl
@@ -146,10 +146,10 @@ in
     sane-airscan
     font-awesome
     nerdfonts
-    cage
-    waydroid
+    #cage
+    #waydroid
   ];
-# .override { fonts = [ "JetBrainsMono" "FontAwesome" "Symbols" "DejaVuSans" ]; }
+
   services.flatpak.enable = true;
 
   xdg.portal.enable = true;
