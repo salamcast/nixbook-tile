@@ -1,4 +1,4 @@
-![nixbook os logo](https://github.com/user-attachments/assets/8511e040-ebf0-4090-b920-c051b23fcc9c)
+![nixbook-tile wildstyle](https://raw.githubusercontent.com/salamcast/nixbook-tile/refs/heads/main/config/config/i3/images/nixbook-tile%20wildstyle.jpg)
 
 **Convert your old computer (even chromebook) to a user friendly, lightweight, durable, and auto updating operating system build on top of NixOS.**
 
