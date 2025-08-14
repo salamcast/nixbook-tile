@@ -1,6 +1,6 @@
 { config, pkgs, ... }:
 let
-  nixChannel = "https://nixos.org/channels/nixos-24.11"; 
+  nixChannel = "https://nixos.org/channels/nixos-25.05"; 
 
   ## Notify Users Script
   notifyUsersScript = pkgs.writeScript "notify-users.sh" ''
@@ -160,9 +160,9 @@ in
   xdg.portal.config.common.default = [ "xapp" ];
 
   virtualisation.docker.enable = true;
-  virtualisation.waydroid.enable = true;
+  #virtualisation.waydroid.enable = true;
 
-programs.zsh.enable = true;
+  programs.zsh.enable = true;
 
   nix.gc = {
     automatic = true;
