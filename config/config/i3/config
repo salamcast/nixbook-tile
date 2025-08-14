@@ -231,7 +231,7 @@ bindsym XF86WLAN exec $lock
 # apps menu, F11
 bindsym XF86LaunchA exec $apps
 
-exec feh --bg-scale ~/.config/i3/images/nixbook.png
+exec feh --bg-scale "~/.config/i3/images/nixbook-tile wildstyle.jpg"
 #open the default browser by default
 exec $www
 
