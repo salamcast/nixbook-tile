@@ -1,6 +1,10 @@
 { config, pkgs, ... }:
 let
-  nixChannel = "https://nixos.org/channels/nixos-25.05"; 
+  system.autoUpgrade.enable = true;
+  system.autoUpgrade.allowReboot = true;
+  system.autoUpgrade.channel = "https://channels.nixos.org/nixos-25.05";
+
+  nixChannel = "https://channels.nixos.org/nixos-25.05"; 
 
   ## Notify Users Script
   notifyUsersScript = pkgs.writeScript "notify-users.sh" ''
